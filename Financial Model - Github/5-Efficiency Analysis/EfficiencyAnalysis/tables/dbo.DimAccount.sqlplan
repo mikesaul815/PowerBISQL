@@ -1,0 +1,98 @@
+<ShowPlanXML xmlns="http://schemas.microsoft.com/sqlserver/2004/07/showplan" Version="1.564" Build="16.0.1000.6">
+  <BatchSequence>
+    <Batch>
+      <Statements>
+        <StmtSimple StatementText="&#xD;&#xA;-- Execute a query against the view&#xD;&#xA;SELECT *&#xD;&#xA;FROM dbo.DimAccount" StatementId="1" StatementCompId="1" StatementType="SELECT" RetrievedFromCache="false" StatementSubTreeCost="0.00488228" StatementEstRows="99" SecurityPolicyApplied="false" StatementOptmLevel="TRIVIAL" QueryHash="0xFBD20A218D78573A" QueryPlanHash="0x5A0985D663A61D05" CardinalityEstimationModelVersion="160">
+          <StatementSetOptions QUOTED_IDENTIFIER="true" ARITHABORT="true" CONCAT_NULL_YIELDS_NULL="true" ANSI_NULLS="true" ANSI_PADDING="true" ANSI_WARNINGS="true" NUMERIC_ROUNDABORT="false"></StatementSetOptions>
+          <QueryPlan NonParallelPlanReason="NoParallelPlansInDesktopOrExpressEdition" CachedPlanSize="24" CompileTime="4" CompileCPU="4" CompileMemory="160">
+            <MemoryGrantInfo SerialRequiredMemory="0" SerialDesiredMemory="0" GrantedMemory="0" MaxUsedMemory="0"></MemoryGrantInfo>
+            <OptimizerHardwareDependentProperties EstimatedAvailableMemoryGrant="205741" EstimatedPagesCached="102870" EstimatedAvailableDegreeOfParallelism="4" MaxCompileMemory="3254240"></OptimizerHardwareDependentProperties>
+            <TraceFlags IsCompileTime="1">
+              <TraceFlag Value="8017" Scope="Global"></TraceFlag>
+            </TraceFlags>
+            <RelOp NodeId="0" PhysicalOp="Compute Scalar" LogicalOp="Compute Scalar" EstimateRows="99" EstimateIO="0" EstimateCPU="9.9e-06" AvgRowSize="742" EstimatedTotalSubtreeCost="0.00488228" Parallel="0" EstimateRebinds="0" EstimateRewinds="0" EstimatedExecutionMode="Row">
+              <OutputList>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="AccountKey"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="ParentAccountKey"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="AccountCodeAlternateKey"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="ParentAccountCodeAlternateKey"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="AccountDescription"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="AccountType"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="Operator"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="CustomMembers"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="ValueType"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="CustomMemberOptions"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="OperatorRevPlusExpMinus" ComputedColumn="1"></ColumnReference>
+              </OutputList>
+              <ComputeScalar>
+                <DefinedValues>
+                  <DefinedValue>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="OperatorRevPlusExpMinus" ComputedColumn="1"></ColumnReference>
+                    <ScalarOperator ScalarString="[AdventureWorksDW2022Test].[dbo].[DimAccount].[OperatorRevPlusExpMinus]">
+                      <Identifier>
+                        <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="OperatorRevPlusExpMinus" ComputedColumn="1"></ColumnReference>
+                      </Identifier>
+                    </ScalarOperator>
+                  </DefinedValue>
+                </DefinedValues>
+                <RelOp NodeId="1" PhysicalOp="Clustered Index Scan" LogicalOp="Clustered Index Scan" EstimateRows="99" EstimatedRowsRead="99" EstimateIO="0.00460648" EstimateCPU="0.0002659" AvgRowSize="742" EstimatedTotalSubtreeCost="0.00487238" TableCardinality="99" Parallel="0" EstimateRebinds="0" EstimateRewinds="0" EstimatedExecutionMode="Row">
+                  <OutputList>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="AccountKey"></ColumnReference>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="ParentAccountKey"></ColumnReference>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="AccountCodeAlternateKey"></ColumnReference>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="ParentAccountCodeAlternateKey"></ColumnReference>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="AccountDescription"></ColumnReference>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="AccountType"></ColumnReference>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="Operator"></ColumnReference>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="CustomMembers"></ColumnReference>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="ValueType"></ColumnReference>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="CustomMemberOptions"></ColumnReference>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="OperatorRevPlusExpMinus" ComputedColumn="1"></ColumnReference>
+                  </OutputList>
+                  <IndexScan Ordered="0" ForcedIndex="0" ForceScan="0" NoExpandHint="0" Storage="RowStore">
+                    <DefinedValues>
+                      <DefinedValue>
+                        <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="AccountKey"></ColumnReference>
+                      </DefinedValue>
+                      <DefinedValue>
+                        <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="ParentAccountKey"></ColumnReference>
+                      </DefinedValue>
+                      <DefinedValue>
+                        <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="AccountCodeAlternateKey"></ColumnReference>
+                      </DefinedValue>
+                      <DefinedValue>
+                        <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="ParentAccountCodeAlternateKey"></ColumnReference>
+                      </DefinedValue>
+                      <DefinedValue>
+                        <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="AccountDescription"></ColumnReference>
+                      </DefinedValue>
+                      <DefinedValue>
+                        <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="AccountType"></ColumnReference>
+                      </DefinedValue>
+                      <DefinedValue>
+                        <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="Operator"></ColumnReference>
+                      </DefinedValue>
+                      <DefinedValue>
+                        <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="CustomMembers"></ColumnReference>
+                      </DefinedValue>
+                      <DefinedValue>
+                        <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="ValueType"></ColumnReference>
+                      </DefinedValue>
+                      <DefinedValue>
+                        <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="CustomMemberOptions"></ColumnReference>
+                      </DefinedValue>
+                      <DefinedValue>
+                        <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Column="OperatorRevPlusExpMinus" ComputedColumn="1"></ColumnReference>
+                      </DefinedValue>
+                    </DefinedValues>
+                    <Object Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimAccount]" Index="[PK_DimAccount]" IndexKind="Clustered" Storage="RowStore"></Object>
+                  </IndexScan>
+                </RelOp>
+              </ComputeScalar>
+            </RelOp>
+          </QueryPlan>
+        </StmtSimple>
+      </Statements>
+    </Batch>
+  </BatchSequence>
+</ShowPlanXML>

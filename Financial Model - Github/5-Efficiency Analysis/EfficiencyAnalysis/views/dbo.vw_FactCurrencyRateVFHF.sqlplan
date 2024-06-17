@@ -1,0 +1,104 @@
+<ShowPlanXML xmlns="http://schemas.microsoft.com/sqlserver/2004/07/showplan" Version="1.564" Build="16.0.1000.6">
+  <BatchSequence>
+    <Batch>
+      <Statements>
+        <StmtSimple StatementText="&#xD;&#xA;-- Execute a query against the view&#xD;&#xA;SELECT *&#xD;&#xA;FROM dbo.vw_FactCurrencyRateVFHF" StatementId="1" StatementCompId="1" StatementType="SELECT" RetrievedFromCache="false" StatementSubTreeCost="0.0254142" StatementEstRows="4632" SecurityPolicyApplied="false" StatementOptmLevel="TRIVIAL" QueryHash="0x3175B85E36312208" QueryPlanHash="0xCBAE45D6BB4FCF65" CardinalityEstimationModelVersion="160">
+          <StatementSetOptions QUOTED_IDENTIFIER="true" ARITHABORT="true" CONCAT_NULL_YIELDS_NULL="true" ANSI_NULLS="true" ANSI_PADDING="true" ANSI_WARNINGS="true" NUMERIC_ROUNDABORT="false"></StatementSetOptions>
+          <QueryPlan NonParallelPlanReason="NoParallelPlansInDesktopOrExpressEdition" CachedPlanSize="24" CompileTime="1" CompileCPU="1" CompileMemory="176">
+            <MemoryGrantInfo SerialRequiredMemory="0" SerialDesiredMemory="0" GrantedMemory="0" MaxUsedMemory="0"></MemoryGrantInfo>
+            <OptimizerHardwareDependentProperties EstimatedAvailableMemoryGrant="205741" EstimatedPagesCached="102870" EstimatedAvailableDegreeOfParallelism="4" MaxCompileMemory="126760"></OptimizerHardwareDependentProperties>
+            <OptimizerStatsUsage>
+              <StatisticsInfo LastUpdate="2017-10-27T14:36:32.20" ModificationCount="0" SamplingPercent="100" Statistics="[PK_FactCurrencyRate_CurrencyKey_DateKey]" Table="[FactCurrencyRate]" Schema="[dbo]" Database="[AdventureWorksDW2022Test]"></StatisticsInfo>
+            </OptimizerStatsUsage>
+            <TraceFlags IsCompileTime="1">
+              <TraceFlag Value="8017" Scope="Global"></TraceFlag>
+            </TraceFlags>
+            <RelOp NodeId="0" PhysicalOp="Clustered Index Seek" LogicalOp="Clustered Index Seek" EstimateRows="4632" EstimatedRowsRead="4632" EstimateIO="0.020162" EstimateCPU="0.0052522" AvgRowSize="31" EstimatedTotalSubtreeCost="0.0254142" TableCardinality="14264" Parallel="0" EstimateRebinds="0" EstimateRewinds="0" EstimatedExecutionMode="Row">
+              <OutputList>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactCurrencyRate]" Column="CurrencyKey"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactCurrencyRate]" Column="DateKey"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactCurrencyRate]" Column="AverageRate"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactCurrencyRate]" Column="Date"></ColumnReference>
+              </OutputList>
+              <IndexScan Ordered="1" ScanDirection="FORWARD" ForcedIndex="0" ForceSeek="0" ForceScan="0" NoExpandHint="0" Storage="RowStore">
+                <DefinedValues>
+                  <DefinedValue>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactCurrencyRate]" Column="CurrencyKey"></ColumnReference>
+                  </DefinedValue>
+                  <DefinedValue>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactCurrencyRate]" Column="DateKey"></ColumnReference>
+                  </DefinedValue>
+                  <DefinedValue>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactCurrencyRate]" Column="AverageRate"></ColumnReference>
+                  </DefinedValue>
+                  <DefinedValue>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactCurrencyRate]" Column="Date"></ColumnReference>
+                  </DefinedValue>
+                </DefinedValues>
+                <Object Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactCurrencyRate]" Index="[PK_FactCurrencyRate_CurrencyKey_DateKey]" IndexKind="Clustered" Storage="RowStore"></Object>
+                <SeekPredicates>
+                  <SeekPredicateNew>
+                    <SeekKeys>
+                      <Prefix ScanType="EQ">
+                        <RangeColumns>
+                          <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactCurrencyRate]" Column="CurrencyKey"></ColumnReference>
+                        </RangeColumns>
+                        <RangeExpressions>
+                          <ScalarOperator ScalarString="(6)">
+                            <Const ConstValue="(6)"></Const>
+                          </ScalarOperator>
+                        </RangeExpressions>
+                      </Prefix>
+                    </SeekKeys>
+                  </SeekPredicateNew>
+                  <SeekPredicateNew>
+                    <SeekKeys>
+                      <Prefix ScanType="EQ">
+                        <RangeColumns>
+                          <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactCurrencyRate]" Column="CurrencyKey"></ColumnReference>
+                        </RangeColumns>
+                        <RangeExpressions>
+                          <ScalarOperator ScalarString="(19)">
+                            <Const ConstValue="(19)"></Const>
+                          </ScalarOperator>
+                        </RangeExpressions>
+                      </Prefix>
+                    </SeekKeys>
+                  </SeekPredicateNew>
+                  <SeekPredicateNew>
+                    <SeekKeys>
+                      <Prefix ScanType="EQ">
+                        <RangeColumns>
+                          <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactCurrencyRate]" Column="CurrencyKey"></ColumnReference>
+                        </RangeColumns>
+                        <RangeExpressions>
+                          <ScalarOperator ScalarString="(36)">
+                            <Const ConstValue="(36)"></Const>
+                          </ScalarOperator>
+                        </RangeExpressions>
+                      </Prefix>
+                    </SeekKeys>
+                  </SeekPredicateNew>
+                  <SeekPredicateNew>
+                    <SeekKeys>
+                      <Prefix ScanType="EQ">
+                        <RangeColumns>
+                          <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactCurrencyRate]" Column="CurrencyKey"></ColumnReference>
+                        </RangeColumns>
+                        <RangeExpressions>
+                          <ScalarOperator ScalarString="(100)">
+                            <Const ConstValue="(100)"></Const>
+                          </ScalarOperator>
+                        </RangeExpressions>
+                      </Prefix>
+                    </SeekKeys>
+                  </SeekPredicateNew>
+                </SeekPredicates>
+              </IndexScan>
+            </RelOp>
+          </QueryPlan>
+        </StmtSimple>
+      </Statements>
+    </Batch>
+  </BatchSequence>
+</ShowPlanXML>
