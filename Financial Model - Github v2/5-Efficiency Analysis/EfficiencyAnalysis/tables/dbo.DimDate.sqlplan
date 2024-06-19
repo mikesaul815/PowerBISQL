@@ -1,0 +1,107 @@
+<ShowPlanXML xmlns="http://schemas.microsoft.com/sqlserver/2004/07/showplan" Version="1.564" Build="16.0.1000.6">
+  <BatchSequence>
+    <Batch>
+      <Statements>
+        <StmtSimple StatementText="&#xD;&#xA;-- Execute a query against the view&#xD;&#xA;SELECT *&#xD;&#xA;FROM dbo.DimDate" StatementId="1" StatementCompId="1" StatementType="SELECT" RetrievedFromCache="false" StatementSubTreeCost="0.0902622" StatementEstRows="3652" SecurityPolicyApplied="false" StatementOptmLevel="TRIVIAL" QueryHash="0x64AD32332781181F" QueryPlanHash="0x556375CE7DB65C46" CardinalityEstimationModelVersion="160">
+          <StatementSetOptions QUOTED_IDENTIFIER="true" ARITHABORT="true" CONCAT_NULL_YIELDS_NULL="true" ANSI_NULLS="true" ANSI_PADDING="true" ANSI_WARNINGS="true" NUMERIC_ROUNDABORT="false"></StatementSetOptions>
+          <QueryPlan NonParallelPlanReason="NoParallelPlansInDesktopOrExpressEdition" CachedPlanSize="24" CompileTime="0" CompileCPU="0" CompileMemory="120">
+            <MemoryGrantInfo SerialRequiredMemory="0" SerialDesiredMemory="0" GrantedMemory="0" MaxUsedMemory="0"></MemoryGrantInfo>
+            <OptimizerHardwareDependentProperties EstimatedAvailableMemoryGrant="205741" EstimatedPagesCached="102870" EstimatedAvailableDegreeOfParallelism="4" MaxCompileMemory="3073104"></OptimizerHardwareDependentProperties>
+            <TraceFlags IsCompileTime="1">
+              <TraceFlag Value="8017" Scope="Global"></TraceFlag>
+            </TraceFlags>
+            <RelOp NodeId="0" PhysicalOp="Clustered Index Scan" LogicalOp="Clustered Index Scan" EstimateRows="3652" EstimatedRowsRead="3652" EstimateIO="0.086088" EstimateCPU="0.0041742" AvgRowSize="108" EstimatedTotalSubtreeCost="0.0902622" TableCardinality="3652" Parallel="0" EstimateRebinds="0" EstimateRewinds="0" EstimatedExecutionMode="Row">
+              <OutputList>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="DateKey"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="FullDateAlternateKey"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="DayNumberOfWeek"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="EnglishDayNameOfWeek"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="SpanishDayNameOfWeek"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="FrenchDayNameOfWeek"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="DayNumberOfMonth"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="DayNumberOfYear"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="WeekNumberOfYear"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="EnglishMonthName"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="SpanishMonthName"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="FrenchMonthName"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="MonthNumberOfYear"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="CalendarQuarter"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="CalendarYear"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="CalendarSemester"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="FiscalQuarter"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="FiscalYear"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="FiscalSemester"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="FiscalMonthNumber"></ColumnReference>
+              </OutputList>
+              <IndexScan Ordered="0" ForcedIndex="0" ForceScan="0" NoExpandHint="0" Storage="RowStore">
+                <DefinedValues>
+                  <DefinedValue>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="DateKey"></ColumnReference>
+                  </DefinedValue>
+                  <DefinedValue>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="FullDateAlternateKey"></ColumnReference>
+                  </DefinedValue>
+                  <DefinedValue>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="DayNumberOfWeek"></ColumnReference>
+                  </DefinedValue>
+                  <DefinedValue>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="EnglishDayNameOfWeek"></ColumnReference>
+                  </DefinedValue>
+                  <DefinedValue>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="SpanishDayNameOfWeek"></ColumnReference>
+                  </DefinedValue>
+                  <DefinedValue>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="FrenchDayNameOfWeek"></ColumnReference>
+                  </DefinedValue>
+                  <DefinedValue>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="DayNumberOfMonth"></ColumnReference>
+                  </DefinedValue>
+                  <DefinedValue>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="DayNumberOfYear"></ColumnReference>
+                  </DefinedValue>
+                  <DefinedValue>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="WeekNumberOfYear"></ColumnReference>
+                  </DefinedValue>
+                  <DefinedValue>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="EnglishMonthName"></ColumnReference>
+                  </DefinedValue>
+                  <DefinedValue>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="SpanishMonthName"></ColumnReference>
+                  </DefinedValue>
+                  <DefinedValue>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="FrenchMonthName"></ColumnReference>
+                  </DefinedValue>
+                  <DefinedValue>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="MonthNumberOfYear"></ColumnReference>
+                  </DefinedValue>
+                  <DefinedValue>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="CalendarQuarter"></ColumnReference>
+                  </DefinedValue>
+                  <DefinedValue>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="CalendarYear"></ColumnReference>
+                  </DefinedValue>
+                  <DefinedValue>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="CalendarSemester"></ColumnReference>
+                  </DefinedValue>
+                  <DefinedValue>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="FiscalQuarter"></ColumnReference>
+                  </DefinedValue>
+                  <DefinedValue>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="FiscalYear"></ColumnReference>
+                  </DefinedValue>
+                  <DefinedValue>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="FiscalSemester"></ColumnReference>
+                  </DefinedValue>
+                  <DefinedValue>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="FiscalMonthNumber"></ColumnReference>
+                  </DefinedValue>
+                </DefinedValues>
+                <Object Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Index="[PK_DimDate_DateKey]" IndexKind="Clustered" Storage="RowStore"></Object>
+              </IndexScan>
+            </RelOp>
+          </QueryPlan>
+        </StmtSimple>
+      </Statements>
+    </Batch>
+  </BatchSequence>
+</ShowPlanXML>

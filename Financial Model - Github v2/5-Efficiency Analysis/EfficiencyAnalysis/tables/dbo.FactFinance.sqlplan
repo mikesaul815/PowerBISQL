@@ -1,0 +1,93 @@
+<ShowPlanXML xmlns="http://schemas.microsoft.com/sqlserver/2004/07/showplan" Version="1.564" Build="16.0.1000.6">
+  <BatchSequence>
+    <Batch>
+      <Statements>
+        <StmtSimple StatementText="&#xD;&#xA;-- Execute a query against the view&#xD;&#xA;SELECT *&#xD;&#xA;FROM dbo.FactFinance" StatementId="1" StatementCompId="1" StatementType="SELECT" RetrievedFromCache="false" StatementSubTreeCost="0.306128" StatementEstRows="39409" SecurityPolicyApplied="false" StatementOptmLevel="TRIVIAL" QueryHash="0x56DF927D3B6AA541" QueryPlanHash="0xB3F521D9EB04FFE8" CardinalityEstimationModelVersion="160">
+          <StatementSetOptions QUOTED_IDENTIFIER="true" ARITHABORT="true" CONCAT_NULL_YIELDS_NULL="true" ANSI_NULLS="true" ANSI_PADDING="true" ANSI_WARNINGS="true" NUMERIC_ROUNDABORT="false"></StatementSetOptions>
+          <QueryPlan NonParallelPlanReason="NoParallelPlansInDesktopOrExpressEdition" CachedPlanSize="24" CompileTime="0" CompileCPU="0" CompileMemory="136">
+            <MemoryGrantInfo SerialRequiredMemory="0" SerialDesiredMemory="0" GrantedMemory="0" MaxUsedMemory="0"></MemoryGrantInfo>
+            <OptimizerHardwareDependentProperties EstimatedAvailableMemoryGrant="205741" EstimatedPagesCached="102870" EstimatedAvailableDegreeOfParallelism="4" MaxCompileMemory="3184512"></OptimizerHardwareDependentProperties>
+            <TraceFlags IsCompileTime="1">
+              <TraceFlag Value="8017" Scope="Global"></TraceFlag>
+            </TraceFlags>
+            <RelOp NodeId="0" PhysicalOp="Compute Scalar" LogicalOp="Compute Scalar" EstimateRows="39409" EstimateIO="0" EstimateCPU="0.0039409" AvgRowSize="60" EstimatedTotalSubtreeCost="0.306128" Parallel="0" EstimateRebinds="0" EstimateRewinds="0" EstimatedExecutionMode="Row">
+              <OutputList>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" Column="FinanceKey"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" Column="DateKey"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" Column="OrganizationKey"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" Column="DepartmentGroupKey"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" Column="ScenarioKey"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" Column="AccountKey"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" Column="Amount"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" Column="Date"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" Column="OperatorRevPlusExpMinus"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" Column="CalculatedAmountRevPlusExpMinus" ComputedColumn="1"></ColumnReference>
+              </OutputList>
+              <ComputeScalar>
+                <DefinedValues>
+                  <DefinedValue>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" Column="CalculatedAmountRevPlusExpMinus" ComputedColumn="1"></ColumnReference>
+                    <ScalarOperator ScalarString="[AdventureWorksDW2022Test].[dbo].[FactFinance].[CalculatedAmountRevPlusExpMinus]">
+                      <Identifier>
+                        <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" Column="CalculatedAmountRevPlusExpMinus" ComputedColumn="1"></ColumnReference>
+                      </Identifier>
+                    </ScalarOperator>
+                  </DefinedValue>
+                </DefinedValues>
+                <RelOp NodeId="1" PhysicalOp="Table Scan" LogicalOp="Table Scan" EstimateRows="39409" EstimatedRowsRead="39409" EstimateIO="0.258759" EstimateCPU="0.0434284" AvgRowSize="60" EstimatedTotalSubtreeCost="0.302187" TableCardinality="39409" Parallel="0" EstimateRebinds="0" EstimateRewinds="0" EstimatedExecutionMode="Row">
+                  <OutputList>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" Column="FinanceKey"></ColumnReference>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" Column="DateKey"></ColumnReference>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" Column="OrganizationKey"></ColumnReference>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" Column="DepartmentGroupKey"></ColumnReference>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" Column="ScenarioKey"></ColumnReference>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" Column="AccountKey"></ColumnReference>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" Column="Amount"></ColumnReference>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" Column="Date"></ColumnReference>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" Column="OperatorRevPlusExpMinus"></ColumnReference>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" Column="CalculatedAmountRevPlusExpMinus" ComputedColumn="1"></ColumnReference>
+                  </OutputList>
+                  <TableScan Ordered="0" ForcedIndex="0" ForceScan="0" NoExpandHint="0" Storage="RowStore">
+                    <DefinedValues>
+                      <DefinedValue>
+                        <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" Column="FinanceKey"></ColumnReference>
+                      </DefinedValue>
+                      <DefinedValue>
+                        <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" Column="DateKey"></ColumnReference>
+                      </DefinedValue>
+                      <DefinedValue>
+                        <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" Column="OrganizationKey"></ColumnReference>
+                      </DefinedValue>
+                      <DefinedValue>
+                        <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" Column="DepartmentGroupKey"></ColumnReference>
+                      </DefinedValue>
+                      <DefinedValue>
+                        <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" Column="ScenarioKey"></ColumnReference>
+                      </DefinedValue>
+                      <DefinedValue>
+                        <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" Column="AccountKey"></ColumnReference>
+                      </DefinedValue>
+                      <DefinedValue>
+                        <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" Column="Amount"></ColumnReference>
+                      </DefinedValue>
+                      <DefinedValue>
+                        <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" Column="Date"></ColumnReference>
+                      </DefinedValue>
+                      <DefinedValue>
+                        <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" Column="OperatorRevPlusExpMinus"></ColumnReference>
+                      </DefinedValue>
+                      <DefinedValue>
+                        <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" Column="CalculatedAmountRevPlusExpMinus" ComputedColumn="1"></ColumnReference>
+                      </DefinedValue>
+                    </DefinedValues>
+                    <Object Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[FactFinance]" IndexKind="Heap" Storage="RowStore"></Object>
+                  </TableScan>
+                </RelOp>
+              </ComputeScalar>
+            </RelOp>
+          </QueryPlan>
+        </StmtSimple>
+      </Statements>
+    </Batch>
+  </BatchSequence>
+</ShowPlanXML>

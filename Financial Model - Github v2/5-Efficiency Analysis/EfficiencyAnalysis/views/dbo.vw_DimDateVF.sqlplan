@@ -1,0 +1,43 @@
+<ShowPlanXML xmlns="http://schemas.microsoft.com/sqlserver/2004/07/showplan" Version="1.564" Build="16.0.1000.6">
+  <BatchSequence>
+    <Batch>
+      <Statements>
+        <StmtSimple StatementText="&#xD;&#xA;-- Execute a query against the view&#xD;&#xA;SELECT *&#xD;&#xA;FROM dbo.vw_DimDateVF" StatementId="1" StatementCompId="1" StatementType="SELECT" RetrievedFromCache="false" StatementSubTreeCost="0.0902622" StatementEstRows="3652" SecurityPolicyApplied="false" StatementOptmLevel="TRIVIAL" QueryHash="0xB0AFD2422E4B0AC8" QueryPlanHash="0x556375CE7DB65C46" CardinalityEstimationModelVersion="160">
+          <StatementSetOptions QUOTED_IDENTIFIER="true" ARITHABORT="true" CONCAT_NULL_YIELDS_NULL="true" ANSI_NULLS="true" ANSI_PADDING="true" ANSI_WARNINGS="true" NUMERIC_ROUNDABORT="false"></StatementSetOptions>
+          <QueryPlan NonParallelPlanReason="NoParallelPlansInDesktopOrExpressEdition" CachedPlanSize="16" CompileTime="5" CompileCPU="5" CompileMemory="112">
+            <MemoryGrantInfo SerialRequiredMemory="0" SerialDesiredMemory="0" GrantedMemory="0" MaxUsedMemory="0"></MemoryGrantInfo>
+            <OptimizerHardwareDependentProperties EstimatedAvailableMemoryGrant="205741" EstimatedPagesCached="102870" EstimatedAvailableDegreeOfParallelism="4" MaxCompileMemory="6568528"></OptimizerHardwareDependentProperties>
+            <TraceFlags IsCompileTime="1">
+              <TraceFlag Value="8017" Scope="Global"></TraceFlag>
+            </TraceFlags>
+            <RelOp NodeId="0" PhysicalOp="Clustered Index Scan" LogicalOp="Clustered Index Scan" EstimateRows="3652" EstimatedRowsRead="3652" EstimateIO="0.086088" EstimateCPU="0.0041742" AvgRowSize="31" EstimatedTotalSubtreeCost="0.0902622" TableCardinality="3652" Parallel="0" EstimateRebinds="0" EstimateRewinds="0" EstimatedExecutionMode="Row">
+              <OutputList>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="DateKey"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="EnglishMonthName"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="FiscalYear"></ColumnReference>
+                <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="FiscalMonthNumber"></ColumnReference>
+              </OutputList>
+              <IndexScan Ordered="0" ForcedIndex="0" ForceScan="0" NoExpandHint="0" Storage="RowStore">
+                <DefinedValues>
+                  <DefinedValue>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="DateKey"></ColumnReference>
+                  </DefinedValue>
+                  <DefinedValue>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="EnglishMonthName"></ColumnReference>
+                  </DefinedValue>
+                  <DefinedValue>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="FiscalYear"></ColumnReference>
+                  </DefinedValue>
+                  <DefinedValue>
+                    <ColumnReference Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Column="FiscalMonthNumber"></ColumnReference>
+                  </DefinedValue>
+                </DefinedValues>
+                <Object Database="[AdventureWorksDW2022Test]" Schema="[dbo]" Table="[DimDate]" Index="[PK_DimDate_DateKey]" IndexKind="Clustered" Storage="RowStore"></Object>
+              </IndexScan>
+            </RelOp>
+          </QueryPlan>
+        </StmtSimple>
+      </Statements>
+    </Batch>
+  </BatchSequence>
+</ShowPlanXML>
